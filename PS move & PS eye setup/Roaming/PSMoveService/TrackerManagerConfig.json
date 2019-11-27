@@ -1,0 +1,68 @@
+{
+    "version": "2",
+    "controller_position_smoothing": "0",
+    "ignore_pose_from_one_tracker": "false",
+    "optical_tracking_timeout": "100",
+    "use_bgr_to_hsv_lookup_table": "true",
+    "tracker_sleep_ms": "1",
+    "excluded_opposed_cameras": "false",
+    "min_valid_projection_area": "16",
+    "disable_roi": "false",
+    "default_tracker_profile": {
+        "frame_width": "640",
+        "frame_rate": "40",
+        "exposure": "32",
+        "gain": "32",
+        "color_preset": {
+            "magenta": {
+                "hue_center": "150",
+                "hue_range": "10",
+                "saturation_center": "255",
+                "saturation_range": "32",
+                "value_center": "255",
+                "value_range": "32"
+            },
+            "cyan": {
+                "hue_center": "90",
+                "hue_range": "10",
+                "saturation_center": "255",
+                "saturation_range": "32",
+                "value_center": "255",
+                "value_range": "32"
+            },
+            "yellow": {
+                "hue_center": "30",
+                "hue_range": "10",
+                "saturation_center": "255",
+                "saturation_range": "32",
+                "value_center": "255",
+                "value_range": "32"
+            },
+            "red": {
+                "hue_center": "0",
+                "hue_range": "10",
+                "saturation_center": "255",
+                "saturation_range": "32",
+                "value_center": "255",
+                "value_range": "32"
+            },
+            "green": {
+                "hue_center": "60",
+                "hue_range": "10",
+                "saturation_center": "255",
+                "saturation_range": "32",
+                "value_center": "255",
+                "value_range": "32"
+            },
+            "blue": {
+                "hue_center": "120",
+                "hue_range": "10",
+                "saturation_center": "255",
+                "saturation_range": "32",
+                "value_center": "255",
+                "value_range": "32"
+            }
+        }
+    },
+    "global_forward_degrees": "270"
+}

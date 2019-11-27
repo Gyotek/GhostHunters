@@ -1,0 +1,100 @@
+{
+    "is_valid": "true",
+    "version": "2",
+    "firmware_version": "0",
+    "bt_firmware_version": "0",
+    "firmware_revision": "0",
+    "prediction_time": "0",
+    "max_poll_failure_count": "100",
+    "poll_timeout_ms": "1000",
+    "Calibration": {
+        "Accel": {
+            "X": {
+                "k": "0.000230388207",
+                "b": "0.0351341963"
+            },
+            "Y": {
+                "k": "0.000231401136",
+                "b": "0.00150406361"
+            },
+            "Z": {
+                "k": "0.000232288032",
+                "b": "0.00650405884"
+            },
+            "Variance": "7.1999998e-06",
+            "NoiseRadius": "0.0140000004"
+        },
+        "Gyro": {
+            "X": {
+                "k": "0.0016176058",
+                "b": "0",
+                "d": "0"
+            },
+            "Y": {
+                "k": "0.00176221726",
+                "b": "0",
+                "d": "0"
+            },
+            "Z": {
+                "k": "0.00159908005",
+                "b": "0",
+                "d": "0"
+            },
+            "Variance": "3.08203441e-09",
+            "Drift": "0.0219199173"
+        },
+        "Magnetometer": {
+            "Center": {
+                "X": "-24.3051186",
+                "Y": "-97.2944336",
+                "Z": "-336.708618"
+            },
+            "BasisX": {
+                "X": "1",
+                "Y": "0",
+                "Z": "0"
+            },
+            "BasisY": {
+                "X": "0",
+                "Y": "1",
+                "Z": "0"
+            },
+            "BasisZ": {
+                "X": "0",
+                "Y": "0",
+                "Z": "1"
+            },
+            "Extents": {
+                "X": "196.343109",
+                "Y": "169.218918",
+                "Z": "145.413269"
+            },
+            "Identity": {
+                "X": "0.014664215",
+                "Y": "0.795688868",
+                "Z": "0.605528057"
+            },
+            "Error": "27.6055031",
+            "Variance": "0.000577560102"
+        },
+        "Position": {
+            "VarianceExpFitA": "0.0994158462",
+            "VarianceExpFitB": "-0.000567041978"
+        },
+        "Orientation": {
+            "Variance": "18.75"
+        },
+        "Time": {
+            "MeanUpdateTime": "0.00833300035"
+        }
+    },
+    "OrientationFilter": {
+        "FilterType": "ComplementaryMARG"
+    },
+    "PositionFilter": {
+        "FilterType": "LowPassExponential",
+        "MaxVelocity": "1"
+    },
+    "hand": "Any",
+    "tracking_color": "magenta"
+}

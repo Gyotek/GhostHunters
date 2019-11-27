@@ -1,0 +1,11 @@
+{
+    "version": "1",
+    "controller_reconnect_interval": "1000",
+    "controller_poll_interval": "2",
+    "tracker_reconnect_interval": "10000",
+    "tracker_poll_interval": "13",
+    "hmd_reconnect_interval": "10000",
+    "hmd_poll_interval": "2",
+    "gamepad_api_enabled": "true",
+    "platform_api_enabled": "true"
+}

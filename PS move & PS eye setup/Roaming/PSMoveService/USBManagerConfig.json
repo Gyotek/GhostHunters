@@ -1,0 +1,5 @@
+{
+    "version": "1",
+    "usb_api": "libusb_api",
+    "enable_usb_transfers": "true"
+}
