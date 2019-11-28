@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2129290146334446168}
   - component: {fileID: 8041993471803768710}
   - component: {fileID: 6458702712151923780}
+  - component: {fileID: 5832628094282879864}
   m_Layer: 0
   m_Name: "Fant\xF4me1"
   m_TagString: Untagged
@@ -148,6 +149,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - Event: {fileID: 11400000, guid: baef1eec39772964b98a96540c98846f, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5832628094282879864}
+          m_MethodName: GhostCanMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Event: {fileID: 11400000, guid: 47af64972c924934d9b60a2ef9f3c990, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5832628094282879864}
+          m_MethodName: GhostCantMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2129290146334446168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +219,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GhostWasFound: {fileID: 11400000, guid: 450c30e58f2337b47bf010fee3d0a393, type: 2}
   GhostWasShot: {fileID: 11400000, guid: e34fca8adfeb5c842bcc9995db9b55f0, type: 2}
+--- !u!114 &5832628094282879864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458702712705756042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43c7abc0472a574e8d9c2a324843137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  ghostSpeed: 2
