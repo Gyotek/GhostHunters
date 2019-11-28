@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d3bb75bc6655a4490fd961d39fd57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerTr: {fileID: 323196803}
   hitpointTr: {fileID: 335525615}
 --- !u!23 &26216097
 MeshRenderer:

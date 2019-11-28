@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Curseur : MonoBehaviour
 {
+    [SerializeField] Transform controllerTr;
     [SerializeField] Transform hitpointTr;
 
     // Start is called before the first frame update
@@ -15,9 +16,10 @@ public class Curseur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * Mathf.Infinity, Color.blue);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 100, Color.blue);
 
-
+        transform.rotation = Quaternion.Inverse(controllerTr.rotation);
+        /*transform.rotation = new Quaternion(-controllerTr.rotation.x, 0, 0, 0);*/
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1 << 9))
         {
