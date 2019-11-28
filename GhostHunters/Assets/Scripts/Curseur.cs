@@ -17,9 +17,9 @@ public class Curseur : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 100, Color.blue);
-
-        transform.rotation = Quaternion.Inverse(controllerTr.rotation);
-        /*transform.rotation = new Quaternion(-controllerTr.rotation.x, 0, 0, 0);*/
+    
+        //transform.rotation = Quaternion.Inverse(controllerTr.rotation);
+        //transform.rotation = new Quaternion(-controllerTr.rotation.x, 0, 0, 0);
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1 << 9))
         {
