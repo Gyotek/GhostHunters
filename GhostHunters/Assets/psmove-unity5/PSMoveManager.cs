@@ -951,7 +951,7 @@ class PSMoveWorker
         PSMoveAPI.psmove_get_orientation(psmove, ref oriw, ref orix, ref oriy, ref oriz);
 
         //NOTE: This orientation is in the PSMoveApi coordinate system
-        controllerData.PSMoveOrientation = new Quaternion(orix/*-180*/, oriy, oriz, oriw);
+        controllerData.PSMoveOrientation = new Quaternion(orix, oriy, oriz, oriw);
     }
 
     private static void ControllerUpdateButtonState(

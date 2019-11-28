@@ -25,6 +25,7 @@ public class Curseur : MonoBehaviour
         {
             Debug.Log("hit something");
             Debug.DrawLine(transform.position, hit.point, Color.red);
+            hitpointTr.position = hit.point;
 
         }
     }
