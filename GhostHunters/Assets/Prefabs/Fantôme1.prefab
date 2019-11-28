@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6458702712705756046}
   - component: {fileID: 2129290146334446168}
   - component: {fileID: 8041993471803768710}
+  - component: {fileID: 6458702712151923780}
   m_Layer: 0
   m_Name: "Fant\xF4me1"
   m_TagString: Untagged
@@ -173,3 +174,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghostAnimator: {fileID: 6458702712705756041}
+--- !u!114 &6458702712151923780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458702712705756042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e872d85e033e8db4981918169846f313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GhostWasFound: {fileID: 11400000, guid: 450c30e58f2337b47bf010fee3d0a393, type: 2}
+  GhostWasShot: {fileID: 11400000, guid: e34fca8adfeb5c842bcc9995db9b55f0, type: 2}
