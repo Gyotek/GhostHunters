@@ -2422,7 +2422,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0.03518915, a: 1}
+  m_Color: {r: 0.67949975, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2440,8 +2440,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560666510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43363792, y: -0.0025380328, z: 1.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.58, y: 0.74, z: 1.6}
+  m_LocalScale: {x: 2.8834496, y: 2.8834496, z: 2.8834496}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2458,6 +2458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da9b7bcd0832664491c9bc2e947ed57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GhostFound: {fileID: 11400000, guid: 450c30e58f2337b47bf010fee3d0a393, type: 2}
+  GhostLost: {fileID: 11400000, guid: 6f5ec7a9aa97be8449daf125b86a1346, type: 2}
+  GhostWasShot: {fileID: 11400000, guid: e34fca8adfeb5c842bcc9995db9b55f0, type: 2}
 --- !u!135 &1560666514
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2469,7 +2472,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1560666515
 Rigidbody:
@@ -2530,8 +2533,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0117188, z: 0.2}
-  m_Center: {x: 3, y: 3.0058594, z: 0}
+  m_Size: {x: 2.4740946, y: 2.8666272, z: 0.16524006}
+  m_Center: {x: 3.1757798, y: 3.116825, z: 0}
 --- !u!212 &1565068207
 SpriteRenderer:
   m_ObjectHideFlags: 0
