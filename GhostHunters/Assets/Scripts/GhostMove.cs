@@ -27,6 +27,7 @@ public class GhostMove : MonoBehaviour
     private void Update()
     {
         GhostMoveFunction();
+        SwitchSprite();
     }
 
     private void GhostMoveFunction()
@@ -58,6 +59,13 @@ public class GhostMove : MonoBehaviour
 
     void SwitchSprite()
     {
-
+        if (wayPointIndex < 5 && wayPointIndex > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 }

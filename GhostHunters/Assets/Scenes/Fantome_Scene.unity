@@ -666,6 +666,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Fant\xF4me2"
       objectReference: {fileID: 0}
+    - target: {fileID: 5316220699878031723, guid: f3455b1a6b1f01e4fbd3e4feb230223d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5316220699878031715, guid: f3455b1a6b1f01e4fbd3e4feb230223d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,11 +744,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Fant\xF4me1"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6458702712705756042, guid: 3096ee1d720fc7b40a6bcd702b64e168,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6458702712705756040, guid: 3096ee1d720fc7b40a6bcd702b64e168,
         type: 3}
