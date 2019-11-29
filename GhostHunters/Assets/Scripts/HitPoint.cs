@@ -9,6 +9,10 @@ public class HitPoint : MonoBehaviour
     [SerializeField] GameEvent GhostLost;
     [SerializeField] GameEvent GhostWasShot;
 
+    [SerializeField] PSMoveController m_PSMoveController;
+    [SerializeField] GameObject particleGreen;
+    [SerializeField] GameObject particleRed;
+
     bool ghostPointed = false;
     float ghostPointedTimer = 0f;
 
@@ -18,15 +22,30 @@ public class HitPoint : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        sprite.color = Color.green;
+
+
+        particleGreen.SetActive(true);
+        particleRed.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ghostPointed == true)
+        if (m_PSMoveController.TriggerValue < 0.2 && particleGreen.activeSelf == false)
+        {
+            particleGreen.SetActive(true);
+            particleRed.SetActive(false);
+        }
+        else if (m_PSMoveController.TriggerValue > 0.2 && particleRed.activeSelf == false)
+        {
+            particleRed.SetActive(true);
+            particleGreen.SetActive(false);
+        }
+
+        if (ghostPointed == true && m_PSMoveController.TriggerValue > 0.2)
         {
             ghostPointedTimer += Time.deltaTime;
-            Debug.Log("Ghost pointed for : " + ghostPointedTimer);
             if (ghostPointedTimer >= 3f)
             {
                 Debug.Log("Ghost Killed !");
@@ -35,7 +54,8 @@ public class HitPoint : MonoBehaviour
                 ghostPointedTimer = 0f;
             }
         }
-        
+
+        sprite.transform.localScale = new Vector3(2.8f * 1 + (m_PSMoveController.TriggerValue*2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2));
     }
 
     private void OnTriggerEnter(Collider other)
