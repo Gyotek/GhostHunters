@@ -8,8 +8,10 @@ public class GhostMove : MonoBehaviour
 
     public float ghostSpeed;
 
+    [SerializeField]
     int wayPointIndex = 0;
 
+    [SerializeField]
     private bool canMove = false;
 
     private SpriteRenderer spriteRenderer;
@@ -36,7 +38,7 @@ public class GhostMove : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[wayPointIndex].transform.position, ghostSpeed * Time.deltaTime);
 
-            if (transform.position == waypoints[wayPointIndex].transform.position)
+            if (transform.position == waypoints[wayPointIndex].transform.position || Input.GetKeyDown(KeyCode.J))
             {
                 wayPointIndex += 1;
             }
