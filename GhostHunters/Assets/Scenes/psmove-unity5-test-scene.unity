@@ -2441,7 +2441,7 @@ Transform:
   m_GameObject: {fileID: 1560666510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.58, y: 0.74, z: 1.6}
-  m_LocalScale: {x: 2.8834496, y: 2.8834496, z: 2.8834496}
+  m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2461,6 +2461,7 @@ MonoBehaviour:
   GhostFound: {fileID: 11400000, guid: 450c30e58f2337b47bf010fee3d0a393, type: 2}
   GhostLost: {fileID: 11400000, guid: 6f5ec7a9aa97be8449daf125b86a1346, type: 2}
   GhostWasShot: {fileID: 11400000, guid: e34fca8adfeb5c842bcc9995db9b55f0, type: 2}
+  m_PSMoveController: {fileID: 323196802}
 --- !u!135 &1560666514
 SphereCollider:
   m_ObjectHideFlags: 0

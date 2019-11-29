@@ -8,7 +8,7 @@ public class HitPoint : MonoBehaviour
     [SerializeField] GameEvent GhostFound;
     [SerializeField] GameEvent GhostLost;
     [SerializeField] GameEvent GhostWasShot;
-
+    [SerializeField] PSMoveController m_PSMoveController;
     bool ghostPointed = false;
     float ghostPointedTimer = 0f;
 
@@ -23,7 +23,7 @@ public class HitPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ghostPointed == true)
+        if (ghostPointed == true && m_PSMoveController.TriggerValue > 0.2)
         {
             ghostPointedTimer += Time.deltaTime;
             Debug.Log("Ghost pointed for : " + ghostPointedTimer);
@@ -35,7 +35,8 @@ public class HitPoint : MonoBehaviour
                 ghostPointedTimer = 0f;
             }
         }
-        
+
+        sprite.transform.localScale = new Vector3(2.8f * 1 + (m_PSMoveController.TriggerValue*2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2));
     }
 
     private void OnTriggerEnter(Collider other)
