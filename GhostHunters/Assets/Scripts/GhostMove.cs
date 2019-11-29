@@ -12,6 +12,13 @@ public class GhostMove : MonoBehaviour
 
     private bool canMove = false;
 
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private void Start()
     {
         transform.position = waypoints[wayPointIndex].transform.position;
@@ -47,5 +54,10 @@ public class GhostMove : MonoBehaviour
     public void GhostCantMove()
     {
         canMove = false;
+    }
+
+    void SwitchSprite()
+    {
+
     }
 }
