@@ -60,7 +60,7 @@ public class HitPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Ghost>())
+        if (other.GetComponent<GhostWasFound>())
         {
             Debug.Log("Ghost Found !");
             sprite.color = Color.red;
@@ -71,7 +71,7 @@ public class HitPoint : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Ghost>())
+        if (other.GetComponent<GhostWasFound>())
         {
             Debug.Log("Ghost Lost !");
             sprite.color = Color.green;
