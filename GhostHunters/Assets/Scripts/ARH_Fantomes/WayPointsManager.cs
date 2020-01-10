@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class WayPointsManager : MonoBehaviour
 {
+    public static WayPointsManager instance;
+    private void Awake() { instance = this; }
+
+
     [SerializeField] private List<Transform> wayPoints;
+    private Transform wayPointToReturn;
 
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 GetWayPoint(int wayPointID)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        wayPointToReturn = wayPoints[wayPointID - 1];
+        return (wayPointToReturn.position);
     }
 }
