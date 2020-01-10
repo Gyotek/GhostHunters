@@ -163,7 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf71738f7704014bb68e79040787f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ghosts: []
+  numberOfWaves:
+  - numberOfGhosts:
+    - ghostSpawn: {fileID: 0}
 --- !u!1 &241533256
 GameObject:
   m_ObjectHideFlags: 0
