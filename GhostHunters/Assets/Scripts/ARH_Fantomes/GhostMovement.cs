@@ -6,15 +6,18 @@ using UnityEngine.AI;
 public class GhostMovement : MonoBehaviour
 {
     public int actualWayPoint;
+    public int closestWayPoint;
     private Ghost me;
     private Rigidbody rb;
     private Vector3 nextWayPoint;
-    private float rotationForce = 50;
+
+    [SerializeField] float speed = 4;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextWayPoint = WayPointsManager.instance.GetWayPoint(Random.Range(1, 32));
+        actualWayPoint = Random.Range(1, 32) - 1;
+        nextWayPoint = WayPointsManager.instance.GetWayPoint(actualWayPoint);
         rb = GetComponent<Rigidbody>();
         me = GetComponent<Ghost>();
         SelectPath();
@@ -26,9 +29,16 @@ public class GhostMovement : MonoBehaviour
         if (me.myState == Ghost.State.Dead)
             Destroy(this.gameObject);
 
+        //transform.LookAt(nextWayPoint, Vector3.forward);
+        transform.position = Vector3.MoveTowards(transform.position, nextWayPoint, speed * Time.deltaTime);
 
-        rb.AddForce(transform.up * 0.05f, ForceMode.Impulse);
-        transform.LookAt(nextWayPoint, Vector3.up);
+        closestWayPoint = WayPointsManager.instance.CheckClosestWayPoint(transform.position)+1;
+
+        if (WayPointsManager.instance.CheckClosestWayPoint(transform.position)+1 == actualWayPoint)
+        {
+            actualWayPoint = Random.Range(1, 32) - 1;
+            nextWayPoint = WayPointsManager.instance.GetWayPoint(actualWayPoint);
+        }
     }
 
     void SelectPath()
