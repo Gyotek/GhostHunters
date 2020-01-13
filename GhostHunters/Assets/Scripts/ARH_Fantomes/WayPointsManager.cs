@@ -16,7 +16,7 @@ public class WayPointsManager : MonoBehaviour
 
     public Vector3 GetWayPoint(int wayPointID)
     {
-        wayPointToReturn = wayPoints[wayPointID - 1];
+        wayPointToReturn = wayPoints[wayPointID];
         return (wayPointToReturn.position);
     }
 
@@ -32,6 +32,6 @@ public class WayPointsManager : MonoBehaviour
                 closestWayPointID = i;
             }
         }
-        return closestWayPointID;
+        return closestWayPointID-1;
     }
 }
