@@ -32,6 +32,6 @@ public class WayPointsManager : MonoBehaviour
                 closestWayPointID = i;
             }
         }
-        return closestWayPointID-1;
+        return closestWayPointID;
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class GhostMovement : MonoBehaviour
 {
-    public int actualWayPoint;
-    public int closestWayPoint;
+    public int nextWayPointID;
+    public int closestWayPointID;
     private Ghost me;
     private Rigidbody rb;
     private Vector3 nextWayPoint;
@@ -16,8 +16,8 @@ public class GhostMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        actualWayPoint = Random.Range(1, 32) - 1;
-        nextWayPoint = WayPointsManager.instance.GetWayPoint(actualWayPoint);
+        nextWayPointID = Random.Range(0, 40);
+        nextWayPoint = WayPointsManager.instance.GetWayPoint(nextWayPointID);
         rb = GetComponent<Rigidbody>();
         me = GetComponent<Ghost>();
         SelectPath();
@@ -32,18 +32,39 @@ public class GhostMovement : MonoBehaviour
         //transform.LookAt(nextWayPoint, Vector3.forward);
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint, speed * Time.deltaTime);
 
-        closestWayPoint = WayPointsManager.instance.CheckClosestWayPoint(transform.position)+1;
+        closestWayPointID = WayPointsManager.instance.CheckClosestWayPoint(transform.position);
 
-        if (WayPointsManager.instance.CheckClosestWayPoint(transform.position)+1 == actualWayPoint)
+        if (WayPointsManager.instance.CheckClosestWayPoint(transform.position) == nextWayPointID)
         {
-            actualWayPoint = Random.Range(1, 32) - 1;
-            nextWayPoint = WayPointsManager.instance.GetWayPoint(actualWayPoint);
+            nextWayPointID = closestWayPointID;
+            SelectPath();
         }
     }
 
     void SelectPath()
     {
-        //Random suivant le me.myGhostType
+        int randomPath = Random.Range(1, 5);
+        switch (randomPath)
+        {
+            case (1):
+                nextWayPointID = nextWayPointID + 9;
+                break;
+            case (2):
+                nextWayPointID = nextWayPointID - 9;
+                break;
+            case (3):
+                nextWayPointID = nextWayPointID + 11;
+                break;
+            case (4):
+                nextWayPointID = nextWayPointID - 11;
+                break;
+            default:
+                break;
+        }
+        if (nextWayPointID < 0 || nextWayPointID >= 40)
+            SelectPath();
+
+        nextWayPoint = WayPointsManager.instance.GetWayPoint(nextWayPointID);
     }
 }
 
