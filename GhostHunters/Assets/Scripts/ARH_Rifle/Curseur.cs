@@ -9,6 +9,7 @@ public class Curseur : MonoBehaviour
 
     [SerializeField] Transform controllerTr;
     [SerializeField] Transform hitpointTr;
+    public Vector3 hitPointPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class Curseur : MonoBehaviour
         {
             Debug.Log("hit something");
             Debug.DrawLine(transform.position, hit.point, Color.red);
-            hitpointTr.position = hit.point;
+            hitPointPosition = hit.point;
 
         }
     }

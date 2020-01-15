@@ -72,8 +72,3 @@ public class GhostMovement : MonoBehaviour
         nextWayPoint = WayPointsManager.instance.GetWayPoint(nextWayPointID);
     }
 }
-
-//navMeshAgent.remainingDistance
-//navMeshAgent.destination
-//NavMeshAgent.pathPending
-//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(selectCible.NewCible().RuntimeValue.position - transform.position), rotationForce * Time.deltaTime);

@@ -17,7 +17,9 @@ public class HitPoint : MonoBehaviour
     [SerializeField] GameObject particleRed;
 
     bool ghostPointed = false;
+    public bool usePsMove = true;
     float ghostPointedTimer = 0f;
+    [SerializeField] Camera myCamera;
 
     SpriteRenderer sprite;
 
@@ -35,17 +37,54 @@ public class HitPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_PSMoveController.TriggerValue < 0.2 && particleGreen.activeSelf == false)
+        if (usePsMove)
         {
-            particleGreen.SetActive(true);
-            particleRed.SetActive(false);
+            transform.position = Curseur.instance.hitPointPosition;
+
+            if (m_PSMoveController.TriggerValue < 0.2  && particleGreen.activeSelf == false)
+            {
+                particleGreen.SetActive(true);
+                particleRed.SetActive(false);
+            }
+            else if (m_PSMoveController.TriggerValue > 0.2 && particleRed.activeSelf == false)
+            {
+                particleRed.SetActive(true);
+                particleGreen.SetActive(false);
+            }
         }
-        else if (m_PSMoveController.TriggerValue > 0.2 && particleRed.activeSelf == false)
+        else
         {
-            particleRed.SetActive(true);
-            particleGreen.SetActive(false);
+            //Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1 << 9)
+
+            //Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+            //Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
+            //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+
+
+
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 100, Color.blue);
+            RaycastHit hit;
+            if (Physics.Raycast(myCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 9))
+            {
+                Debug.Log("hit something");
+                transform.position = hit.point;
+
+            }
+
+            if (!Input.GetButton("Fire1") && particleGreen.activeSelf == false)
+            {
+                particleGreen.SetActive(true);
+                particleRed.SetActive(false);
+            }
+            else if (Input.GetButton("Fire1") && particleRed.activeSelf == false)
+            {
+                particleRed.SetActive(true);
+                particleGreen.SetActive(false);
+            }
         }
 
+
+        /*
         if (ghostPointed == true && m_PSMoveController.TriggerValue > 0.2)
         {
             ghostPointedTimer += Time.deltaTime;
@@ -57,7 +96,7 @@ public class HitPoint : MonoBehaviour
                 ghostPointedTimer = 0f;
             }
         }
-
+        */
         sprite.transform.localScale = new Vector3(2.8f * 1 + (m_PSMoveController.TriggerValue*2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2));
     }
 
