@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Curseur : MonoBehaviour
 {
+    public static Curseur instance;
+    private void Awake() { instance = this; }
+
     [SerializeField] Transform controllerTr;
     [SerializeField] Transform hitpointTr;
 

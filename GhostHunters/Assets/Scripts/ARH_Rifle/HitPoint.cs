@@ -5,6 +5,9 @@ using GameSystem;
 
 public class HitPoint : MonoBehaviour
 {
+    public static HitPoint instance;
+    private void Awake() { instance = this; }
+
     [SerializeField] GameEvent GhostFound;
     [SerializeField] GameEvent GhostLost;
     [SerializeField] GameEvent GhostWasShot;
@@ -62,6 +65,7 @@ public class HitPoint : MonoBehaviour
     {
         if (other.GetComponent<Ghost>())
         {
+            other.GetComponent<Ghost>().Pointed();
             Debug.Log("Ghost Found !");
             sprite.color = Color.red;
             GhostFound.Raise();
@@ -73,6 +77,7 @@ public class HitPoint : MonoBehaviour
     {
         if (other.GetComponent<Ghost>())
         {
+            other.GetComponent<Ghost>().Unpointed();
             Debug.Log("Ghost Lost !");
             sprite.color = Color.green;
             ghostPointedTimer = 0f;

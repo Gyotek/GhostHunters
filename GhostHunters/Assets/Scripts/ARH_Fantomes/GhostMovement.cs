@@ -43,6 +43,11 @@ public class GhostMovement : MonoBehaviour
 
     void SelectPath()
     {
+        //nextWayPointID % 10 == 9 -> bord droit
+        //nextWayPointID % 10 == 0 -> bord gauche
+        //nextWayPointID /10 < 1 -> bord haut
+        //nextWayPointID /10 >= 3 -> bord bas
+
         int randomPath = Random.Range(1, 5);
         switch (randomPath)
         {
