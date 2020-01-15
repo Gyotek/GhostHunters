@@ -85,6 +85,7 @@ public class Spawner : MonoBehaviour
             ghostCount = 0;
             waveStarted = false;
             timeSinceWaveStarted = 0;
+            callWaves = false;
         }
     }
 }
