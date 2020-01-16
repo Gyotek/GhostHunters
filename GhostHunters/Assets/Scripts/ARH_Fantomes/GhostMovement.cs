@@ -52,20 +52,85 @@ public class GhostMovement : MonoBehaviour
         switch (randomPath)
         {
             case (1):
-                nextWayPointID = nextWayPointID + 9;
+                if (nextWayPointID == 30 || nextWayPointID == 20 || nextWayPointID == 10)
+                {
+                    nextWayPointID = nextWayPointID - 9;
+                }
+                else if (nextWayPointID == 39)
+                {
+                    nextWayPointID = nextWayPointID - 11;
+                }
+                else if (nextWayPointID == 0)
+                {
+                    nextWayPointID = nextWayPointID + 11;
+                }
+                else
+                {
+                    nextWayPointID = nextWayPointID + 9;
+                }
                 break;
+
             case (2):
-                nextWayPointID = nextWayPointID - 9;
+                if (nextWayPointID == 29 || nextWayPointID == 19 || nextWayPointID == 9)
+                {
+                    nextWayPointID = nextWayPointID + 9;
+                }
+                else if (nextWayPointID == 0)
+                {
+                    nextWayPointID = nextWayPointID + 11;
+                }
+                else if (nextWayPointID == 39)
+                {
+                    nextWayPointID = nextWayPointID - 11;
+                }
+                else
+                {
+                    nextWayPointID = nextWayPointID - 9;
+                }
                 break;
+
             case (3):
-                nextWayPointID = nextWayPointID + 11;
+                if (nextWayPointID == 39 || nextWayPointID == 29 || nextWayPointID == 19)
+                {
+                    nextWayPointID = nextWayPointID -11;
+                }
+                else if (nextWayPointID == 9)
+                {
+                    nextWayPointID = nextWayPointID + 9;
+                }
+                else if (nextWayPointID == 30)
+                {
+                    nextWayPointID = nextWayPointID - 9;
+                }
+                else
+                {
+                    nextWayPointID = nextWayPointID + 11;
+                }
                 break;
+
             case (4):
-                nextWayPointID = nextWayPointID - 11;
+                if (nextWayPointID == 20 || nextWayPointID == 10 || nextWayPointID == 0)
+                {
+                    nextWayPointID = nextWayPointID + 11;
+                }
+                else if (nextWayPointID == 30)
+                {
+                    nextWayPointID = nextWayPointID - 9;
+                }
+                else if (nextWayPointID == 9)
+                {
+                    nextWayPointID = nextWayPointID + 9;
+                }
+                else
+                {
+                    nextWayPointID = nextWayPointID - 11;
+                }
                 break;
+
             default:
                 break;
         }
+
         if (nextWayPointID < 0 || nextWayPointID >= 40)
             SelectPath();
 
