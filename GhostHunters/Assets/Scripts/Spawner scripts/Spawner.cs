@@ -72,8 +72,7 @@ public class Spawner : MonoBehaviour
             {
                 Debug.Log("GhostSpawn");
                 //Spawn the ghost
-                Instantiate(numberOfWaves[waveCount].numberOfGhosts[ghostCount].typeOfGhost, numberOfWaves[waveCount].numberOfGhosts[ghostCount].ghostSpawn.position, 
-                    numberOfWaves[waveCount].numberOfGhosts[ghostCount].ghostSpawn.rotation);
+                Instantiate(numberOfWaves[waveCount].numberOfGhosts[ghostCount].typeOfGhost, WayPointsManager.instance.GetWayPoint(Random.Range(0,40)), Quaternion.identity);
 
                 ghostCount += 1;
             }
@@ -100,7 +99,6 @@ public class WaveArrival
 public class GhostSpawn
 {
     public GameObject typeOfGhost;
-    public Transform ghostSpawn;
     public float timeUntilSpawn;
 }
 
