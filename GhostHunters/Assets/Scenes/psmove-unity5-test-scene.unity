@@ -6954,16 +6954,6 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 1119563116}
-    - target: {fileID: 4418414088059314335, guid: 75822a24db030974982e55a44d94d539,
-        type: 3}
-      propertyPath: life
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4418414088059314334, guid: 75822a24db030974982e55a44d94d539,
-        type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4418414089622281173, guid: 75822a24db030974982e55a44d94d539,
         type: 3}
       propertyPath: m_Layer

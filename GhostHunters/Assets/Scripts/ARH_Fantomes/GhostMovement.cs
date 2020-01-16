@@ -26,12 +26,10 @@ public class GhostMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (me.isMoving && ( me.anim.GetCurrentAnimatorStateInfo(0).IsName("Moving") || me.anim.GetCurrentAnimatorStateInfo(0).IsName("Hided")))
-            Move();
-    }
+        if (me.myState == Ghost.State.Dead)
+            Destroy(this.gameObject);
 
-    void Move()
-    {
+        //transform.LookAt(nextWayPoint, Vector3.forward);
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint, speed * Time.deltaTime);
 
         closestWayPointID = WayPointsManager.instance.CheckClosestWayPoint(transform.position);
