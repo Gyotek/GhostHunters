@@ -37,7 +37,7 @@ public class HitPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(Vector3.forward, 20);
+        transform.Rotate(Vector3.forward, 20);
 
         //position du pointeur
         if (usePsMove)
