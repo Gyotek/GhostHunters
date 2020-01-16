@@ -37,6 +37,11 @@ public class AudioManager : MonoBehaviour
 		Sob,
 	}
 
+    public void Test()
+    {
+
+    }
+
 	void Awake()
 	{
 		if (instance != null)

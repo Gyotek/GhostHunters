@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSystem;
 
 public class Ghost : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class Ghost : MonoBehaviour
 
     public bool isMoving = false;
     bool isPointed = false;
+
+    [SerializeField] GameEvent ghostKilledEvent;
+    [SerializeField] GameEvent ghostAppearEvent;
+    [SerializeField] GameEvent ghostDisappearEvent;
+    [SerializeField] GameEvent ghostStunnedEvent;
+
 
     bool hideCoroutineBool = false;
     bool revealCoroutineBool = false;
@@ -56,7 +63,7 @@ public class Ghost : MonoBehaviour
         {
             if (!isPointed && !unstunCoroutineBool)
                 StartCoroutine(UnstunCoroutine());
-            else
+            else if (HitPoint.instance.m_PSMoveController.TriggerValue > 0.2 || Input.GetButton("Fire1"))
             {
                 life -= Time.deltaTime;
                 if (life <= 0)
@@ -65,26 +72,33 @@ public class Ghost : MonoBehaviour
         }
         else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
         {
+            if(HitPoint.instance.sprite.color == Color.red)
+                HitPoint.instance.KilledAGhost();
+            StopAllCoroutines();
             Destroy(this.gameObject);
         }
 
     }
 
-    void StartMoving() => isMoving = true;
-    void StopMoving() => isMoving = false;
+    void StartMoving() { if (!isMoving) isMoving = true; }
+    void StopMoving() { if (isMoving) isMoving = false; }
 
     public void Pointed()
     {
-        isPointed = true;
+        if (!isPointed)
+            isPointed = true;
     }
     public void Unpointed()
     {
-        isPointed = false;
+        if (isPointed)
+            isPointed = false;
         StartCoroutine(UnstunCoroutine());
     }
 
     public void Hide()
     {
+        if (myState == State.Hide) return;
+
         //if(sprite.enabled == true)
         //    sprite.enabled = false;
         if (!isMoving)
@@ -95,6 +109,8 @@ public class Ghost : MonoBehaviour
 
     public void Reveal()
     {
+        if (myState == State.Revealed) return;
+
         if (sprite.enabled == false)
             sprite.enabled = true;
         anim.SetTrigger("apparitionTrigger");
@@ -104,13 +120,18 @@ public class Ghost : MonoBehaviour
 
     void Stun()
     {
+        if (myState == State.Stun) return;
+
         StopMoving();
         anim.SetTrigger("stunnedTrigger");
         myState = State.Stun;
+        ghostStunnedEvent.Raise();
     }
 
     void Unstun()
     {
+        if (myState != State.Stun) return;
+
         StartMoving();
         anim.SetTrigger("unstunnedTrigger");
         myState = State.Revealed;
@@ -119,6 +140,8 @@ public class Ghost : MonoBehaviour
 
     public void Kill()
     {
+        if (myState == State.Dead) return;
+
         StopMoving();
         anim.SetTrigger("deathTrigger");
         myState = State.Dead;

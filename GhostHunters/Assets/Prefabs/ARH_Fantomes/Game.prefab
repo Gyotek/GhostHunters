@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4418414087874130023}
   - component: {fileID: 4418414087874130016}
   - component: {fileID: 4418414087874130017}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BackgroundWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,13 +60,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4418414087874130018}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -0.42848212, y: -0.5850892, z: 0.54620874}
   m_LocalScale: {x: 2.0775924, y: 27.919016, z: 1.1732711}
   m_Children: []
   m_Father: {fileID: 3989090454183045177}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -89.997, z: 90.003006}
 --- !u!33 &4418414087874130023
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 4418414088009373340}
   - component: {fileID: 4418414088009373337}
   - component: {fileID: 4418414088009373341}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "Poup\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 4418414088034824470}
   - component: {fileID: 4418414088034824469}
   - component: {fileID: 1130963149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 4418414088059314334}
   - component: {fileID: 4418414088059314328}
   - component: {fileID: 4418414088059314329}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestBlueGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,8 +403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGhostType: 0
   myState: 0
-  life: 0
+  life: 10
   isMoving: 0
+  revealTimer: 0.1
   unstunTimer: 2
   stunTimer: 0.5
   minHideAgainTimer: 2.5
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextWayPointID: 0
   closestWayPointID: 0
-  speed: 4
+  speed: 2
 --- !u!136 &4418414088059314328
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -470,7 +471,7 @@ GameObject:
   - component: {fileID: 4418414088176351004}
   - component: {fileID: 4418414088176351001}
   - component: {fileID: 4418414088176351005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tableau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +636,7 @@ GameObject:
   - component: {fileID: 4418414088204310566}
   - component: {fileID: 4418414088204310560}
   - component: {fileID: 4418414088204310561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestGreenGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,6 +674,7 @@ MonoBehaviour:
   myState: 0
   life: 0
   isMoving: 0
+  revealTimer: 0.1
   unstunTimer: 2
   stunTimer: 0.5
   minHideAgainTimer: 2.5
@@ -890,7 +892,7 @@ GameObject:
   - component: {fileID: 4418414089368960999}
   - component: {fileID: 4418414089368961004}
   - component: {fileID: 4418414089368960992}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tirroir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4418414089587803020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1048,7 @@ GameObject:
   - component: {fileID: 4418414089622281172}
   - component: {fileID: 4418414089622281163}
   - component: {fileID: 352823311}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,16 +12,16 @@ public class HitPoint : MonoBehaviour
     [SerializeField] GameEvent GhostLost;
     [SerializeField] GameEvent GhostWasShot;
 
-    [SerializeField] PSMoveController m_PSMoveController;
+    public PSMoveController m_PSMoveController;
     [SerializeField] GameObject particleGreen;
     [SerializeField] GameObject particleRed;
 
-    bool ghostPointed = false;
+    public bool ghostPointed = false;
     public bool usePsMove = true;
     float ghostPointedTimer = 0f;
     [SerializeField] Camera myCamera;
 
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,9 @@ public class HitPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //transform.Rotate(Vector3.forward, 20);
+
+        //position du pointeur
         if (usePsMove)
         {
             transform.position = Curseur.instance.hitPointPosition;
@@ -67,7 +70,7 @@ public class HitPoint : MonoBehaviour
             if (Physics.Raycast(myCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 9))
             {
                 Debug.Log("hit something");
-                transform.position = hit.point;
+                transform.position = new Vector3 (hit.point.x, hit.point.y, hit.point.z + 0.2f);
 
             }
 
@@ -98,6 +101,11 @@ public class HitPoint : MonoBehaviour
         }
         */
         sprite.transform.localScale = new Vector3(2.8f * 1 + (m_PSMoveController.TriggerValue*2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2));
+    }
+
+    public void KilledAGhost()
+    {
+        sprite.color = Color.green;
     }
 
     private void OnTriggerEnter(Collider other)
