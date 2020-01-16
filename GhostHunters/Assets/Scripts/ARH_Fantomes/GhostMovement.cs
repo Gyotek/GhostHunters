@@ -26,12 +26,10 @@ public class GhostMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (me.isMoving && ( me.anim.GetCurrentAnimatorStateInfo(0).IsName("Moving") || me.anim.GetCurrentAnimatorStateInfo(0).IsName("Hided")))
-            Move();
-    }
+        if (me.myState == Ghost.State.Dead)
+            Destroy(this.gameObject);
 
-    void Move()
-    {
+        //transform.LookAt(nextWayPoint, Vector3.forward);
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint, speed * Time.deltaTime);
 
         closestWayPointID = WayPointsManager.instance.CheckClosestWayPoint(transform.position);
@@ -51,23 +49,161 @@ public class GhostMovement : MonoBehaviour
         //nextWayPointID /10 >= 3 -> bord bas
 
         int randomPath = Random.Range(1, 5);
-        switch (randomPath)
+
+        if (me.myGhostType == Ghost.GhostType.Green)
         {
-            case (1):
-                nextWayPointID = nextWayPointID + 9;
-                break;
-            case (2):
-                nextWayPointID = nextWayPointID - 9;
-                break;
-            case (3):
-                nextWayPointID = nextWayPointID + 11;
-                break;
-            case (4):
-                nextWayPointID = nextWayPointID - 11;
-                break;
-            default:
-                break;
+            switch (randomPath)
+            {
+                case (1):
+                    if (nextWayPointID == 30 || nextWayPointID == 20 || nextWayPointID == 10)
+                    {
+                        nextWayPointID = nextWayPointID - 9;
+                    }
+                    else if (nextWayPointID == 39)
+                    {
+                        nextWayPointID = nextWayPointID - 11;
+                    }
+                    else if (nextWayPointID == 0)
+                    {
+                        nextWayPointID = nextWayPointID + 11;
+                    }
+                    else if (30 < nextWayPointID && nextWayPointID < 39)
+                    {
+                        nextWayPointID = nextWayPointID - 9;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID + 9;
+                    }
+                    break;
+
+                case (2):
+                    if (nextWayPointID == 29 || nextWayPointID == 19 || nextWayPointID == 9)
+                    {
+                        nextWayPointID = nextWayPointID + 9;
+                    }
+                    else if (nextWayPointID == 0)
+                    {
+                        nextWayPointID = nextWayPointID + 11;
+                    }
+                    else if (nextWayPointID == 39)
+                    {
+                        nextWayPointID = nextWayPointID - 11;
+                    }
+                    else if (0 < nextWayPointID && nextWayPointID < 9)
+                    {
+                        nextWayPointID = nextWayPointID + 9;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID - 9;
+                    }
+                    break;
+
+                case (3):
+                    if (nextWayPointID == 39 || nextWayPointID == 29 || nextWayPointID == 19)
+                    {
+                        nextWayPointID = nextWayPointID - 11;
+                    }
+                    else if (nextWayPointID == 9)
+                    {
+                        nextWayPointID = nextWayPointID + 9;
+                    }
+                    else if (nextWayPointID == 30)
+                    {
+                        nextWayPointID = nextWayPointID - 9;
+                    }
+                    else if (30 < nextWayPointID && nextWayPointID < 39)
+                    {
+                        nextWayPointID = nextWayPointID - 11;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID + 11;
+                    }
+                    break;
+
+                case (4):
+                    if (nextWayPointID == 20 || nextWayPointID == 10 || nextWayPointID == 0)
+                    {
+                        nextWayPointID = nextWayPointID + 11;
+                    }
+                    else if (nextWayPointID == 30)
+                    {
+                        nextWayPointID = nextWayPointID - 9;
+                    }
+                    else if (nextWayPointID == 9)
+                    {
+                        nextWayPointID = nextWayPointID + 9;
+                    }
+                    else if (0 < nextWayPointID && nextWayPointID < 9)
+                    {
+                        nextWayPointID = nextWayPointID + 11;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID - 11;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
         }
+
+        else if (me.myGhostType == Ghost.GhostType.Red)
+        {
+            switch (randomPath)
+            {
+                case (1):
+                    if (nextWayPointID > 34)
+                    {
+                        nextWayPointID = nextWayPointID - 5;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID + 5;
+                    }
+                    break;
+
+                case (2):
+                    if (nextWayPointID < 5)
+                    {
+                        nextWayPointID = nextWayPointID + 5; 
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID - 5;
+                    }
+                    break;
+
+                case (3):
+                    if (nextWayPointID > 19)
+                    {
+                        nextWayPointID = nextWayPointID - 20;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID + 20;
+                    }
+                    break;
+
+                case (4):
+                    if (nextWayPointID < 20)
+                    {
+                        nextWayPointID = nextWayPointID + 20;
+                    }
+                    else
+                    {
+                        nextWayPointID = nextWayPointID - 20;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         if (nextWayPointID < 0 || nextWayPointID >= 40)
             SelectPath();
 
