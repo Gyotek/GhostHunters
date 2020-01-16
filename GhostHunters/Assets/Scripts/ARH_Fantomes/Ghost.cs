@@ -56,7 +56,7 @@ public class Ghost : MonoBehaviour
         {
             if (!hideCoroutineBool)
                 StartCoroutine(HideCoroutine());
-            if (isPointed && !stunCoroutineBool)
+            if (isPointed && !stunCoroutineBool && (HitPoint.instance.m_PSMoveController.TriggerValue > 0.2 || Input.GetButton("Fire1")))
                 StartCoroutine(StunCoroutine());
         }
         else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Stunned2"))
@@ -125,13 +125,12 @@ public class Ghost : MonoBehaviour
         StopMoving();
         anim.SetTrigger("stunnedTrigger");
         myState = State.Stun;
+        StopCoroutine(HideCoroutine());
         ghostStunnedEvent.Raise();
     }
 
     void Unstun()
     {
-        if (myState != State.Stun) return;
-
         StartMoving();
         anim.SetTrigger("unstunnedTrigger");
         myState = State.Revealed;
@@ -145,6 +144,7 @@ public class Ghost : MonoBehaviour
         StopMoving();
         anim.SetTrigger("deathTrigger");
         myState = State.Dead;
+        StopAllCoroutines();
     }
 
     void CoroutinesChecker()
