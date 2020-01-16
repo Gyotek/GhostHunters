@@ -64,6 +64,10 @@ public class GhostMovement : MonoBehaviour
                 {
                     nextWayPointID = nextWayPointID + 11;
                 }
+                else if (30 < nextWayPointID && nextWayPointID < 39)
+                {
+                    nextWayPointID = nextWayPointID - 9;
+                }
                 else
                 {
                     nextWayPointID = nextWayPointID + 9;
@@ -82,6 +86,10 @@ public class GhostMovement : MonoBehaviour
                 else if (nextWayPointID == 39)
                 {
                     nextWayPointID = nextWayPointID - 11;
+                }
+                else if (0 < nextWayPointID && nextWayPointID < 9)
+                {
+                    nextWayPointID = nextWayPointID + 9;
                 }
                 else
                 {
@@ -102,6 +110,10 @@ public class GhostMovement : MonoBehaviour
                 {
                     nextWayPointID = nextWayPointID - 9;
                 }
+                else if (30 < nextWayPointID && nextWayPointID < 39)
+                {
+                    nextWayPointID = nextWayPointID - 11;
+                }
                 else
                 {
                     nextWayPointID = nextWayPointID + 11;
@@ -120,6 +132,10 @@ public class GhostMovement : MonoBehaviour
                 else if (nextWayPointID == 9)
                 {
                     nextWayPointID = nextWayPointID + 9;
+                }
+                else if (0 < nextWayPointID && nextWayPointID < 9)
+                {
+                    nextWayPointID = nextWayPointID + 11;
                 }
                 else
                 {
