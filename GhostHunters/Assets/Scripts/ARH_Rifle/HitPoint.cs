@@ -120,7 +120,7 @@ public class HitPoint : MonoBehaviour
         }
         */
         if (usePsMove)
-            sprite.transform.localScale = new Vector3(2.8f * 1 - (m_PSMoveController.TriggerValue*2), 2.8f * 1 - (m_PSMoveController.TriggerValue * 2), 2.8f * 1 - (m_PSMoveController.TriggerValue * 2));
+            sprite.transform.localScale = new Vector3(6f * 1 - (m_PSMoveController.TriggerValue*2), 6f * 1 - (m_PSMoveController.TriggerValue * 2), 6f * 1 - (m_PSMoveController.TriggerValue * 2));
 
         if ((usePsMove && m_PSMoveController.TriggerValue > 0.2) || (!usePsMove && Input.GetButtonDown("Fire1")))
         {

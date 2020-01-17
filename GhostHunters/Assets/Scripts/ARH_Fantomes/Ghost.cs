@@ -50,8 +50,6 @@ public class Ghost : MonoBehaviour
     {
         CoroutinesChecker();
         StatesChecker();
-
-
     }
 
     void StatesChecker()

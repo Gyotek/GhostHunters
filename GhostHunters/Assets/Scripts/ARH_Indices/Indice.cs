@@ -40,6 +40,7 @@ public class Indice : MonoBehaviour
         {
             isGhosted = true;
             meshRenderer.material = ghostedMaterial;
+            Debug.Log(indiceName);
             switch (indiceName)
             {
                 case (Indices.Tableau):
@@ -61,6 +62,7 @@ public class Indice : MonoBehaviour
     {
         isGhosted = false;
         meshRenderer.material = defaultMaterial;
+        Debug.Log(indiceName);
         switch (indiceName)
         {
             case (Indices.Tableau):
