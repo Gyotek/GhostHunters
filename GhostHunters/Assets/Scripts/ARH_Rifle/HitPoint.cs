@@ -86,8 +86,7 @@ public class HitPoint : MonoBehaviour
             }
         }
 
-
-        /*
+         /*
         if (ghostPointed == true && m_PSMoveController.TriggerValue > 0.2)
         {
             ghostPointedTimer += Time.deltaTime;
@@ -100,8 +99,18 @@ public class HitPoint : MonoBehaviour
             }
         }
         */
+
         sprite.transform.localScale = new Vector3(2.8f * 1 + (m_PSMoveController.TriggerValue*2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2));
+
+        if ((usePsMove && m_PSMoveController.TriggerValue > 0.2) || (!usePsMove && Input.GetButtonDown("Fire1")))
+        {
+            AudioManager.instance.PlaySFX(AudioManager.SFX.Laser);
+            AudioManager.instance.PlaySFX(AudioManager.SFX.LaserBurst);
+        }
+        else if ((usePsMove && m_PSMoveController.TriggerValue < 0.2) || (!usePsMove && Input.GetButtonUp("Fire1")))
+            AudioManager.instance.StopSfx(AudioManager.SFX.Laser);
     }
+
 
     public void KilledAGhost()
     {

@@ -10,6 +10,7 @@ public class GhostMovement : MonoBehaviour
     private Ghost me;
     private Rigidbody rb;
     private Vector3 nextWayPoint;
+    private bool isFlipped = false;
 
     [SerializeField] float speed = 4;
 
@@ -26,11 +27,31 @@ public class GhostMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (me.myState == Ghost.State.Dead)
-            Destroy(this.gameObject);
+        if(me.isMoving)
+            Move();
+    }
 
+    void FlipSprite()
+    {
+        isFlipped = true;
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z * -1);
+    }
+    void UnFlipSprite()
+    {
+        isFlipped = false;
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z * -1);
+    }
+
+    void Move()
+    {
         //transform.LookAt(nextWayPoint, Vector3.forward);
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint, speed * Time.deltaTime);
+
+        //flip
+        if (transform.position.x < nextWayPoint.x && !isFlipped)
+            FlipSprite();
+        else if (transform.position.x > nextWayPoint.x && isFlipped)
+            UnFlipSprite();
 
         closestWayPointID = WayPointsManager.instance.CheckClosestWayPoint(transform.position);
 

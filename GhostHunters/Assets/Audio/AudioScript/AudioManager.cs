@@ -11,36 +11,25 @@ public class AudioManager : MonoBehaviour
 
 	public Sound[] musics;
 	public Sound[] sounds;
+	public Sound[] apparitionSounds;
 
 	public enum MUSIC
 	{
-		Swirl,
-		Heartbeat,
-		Crowd,
-		Ambiance1,
-		Ambiance2,
-		Pad,
+		Music,
+		IdlePresence,
+		CachePresence,
 	};
 
 	public enum SFX
 	{
-		DemonBreath,
-		HorrorDrum,
-		MetalGhost,
-		BreathLoudBass,
-		GhostBreath,
-		ScratchScary,
-		HumanBone,
+		NouvelleVague,
+		Disparition,
+		Death,
+		StunSound,
 		Laser,
-		ChoirGhostRise,
-		TownGhost,
-		Sob,
+		Apparition,
+        LaserBurst,
 	}
-
-    public void Test()
-    {
-
-    }
 
 	void Awake()
 	{
@@ -61,8 +50,6 @@ public class AudioManager : MonoBehaviour
 			s.source.loop = s.loop;
 			s.source.volume = s.volume;
 			s.source.pitch = s.pitch;
-			
-
 
 			if (s.source.outputAudioMixerGroup == null)
 			{
@@ -78,7 +65,19 @@ public class AudioManager : MonoBehaviour
 			s.source.volume = s.volume;
 			s.source.pitch = s.pitch;
 
+			if (s.source.outputAudioMixerGroup == null)
+			{
+				s.source.outputAudioMixerGroup = mixerGroupSound;
+			}
+		}
 
+		foreach (Sound s in apparitionSounds)
+		{
+			s.source = gameObject.AddComponent<AudioSource>();
+			s.source.clip = s.clip;
+			s.source.loop = s.loop;
+			s.source.volume = s.volume;
+			s.source.pitch = s.pitch;
 
 			if (s.source.outputAudioMixerGroup == null)
 			{
@@ -87,44 +86,39 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		PlayMusic(MUSIC.Music);
+	}
+    
 
 	public void PlaySFX(SFX sfx)
 	{
 		switch (sfx)
 		{
-			case SFX.DemonBreath:
-				Play(sounds, "DemonBreath", true);
+			case SFX.NouvelleVague:
+				Play(sounds, "NouvelleVague", true);
 				break;
-			case SFX.HorrorDrum:
-				Play(sounds, "HorrorDrum", true);
+			case SFX.Disparition:
+				Play(sounds, "Disparition", true);
 				break;
-			case SFX.MetalGhost:
-				Play(sounds, "MetalGhost", true);
+			case SFX.Death:
+				Play(sounds, "Death", true);
 				break;
-			case SFX.BreathLoudBass:
-				Play(sounds, "DemonBreath", true);
+			case SFX.StunSound:
+				Play(sounds, "StunSound", true);
 				break;
-			case SFX.GhostBreath:
-				Play(sounds, "GhostBreath", true);
+			case SFX.Laser: 
+				Play(sounds, "Laser", false);
 				break;
-			case SFX.ScratchScary:
-				Play(sounds, "ScaryScratch", true);
+            case SFX.LaserBurst:
+                Play(sounds, "LaserBurst", false);
+                break;
+            case SFX.Apparition:
+				int rNum = UnityEngine.Random.Range(0, apparitionSounds.Length);
+				Play(apparitionSounds, apparitionSounds[rNum].name, true);
 				break;
-			case SFX.HumanBone:
-				Play(sounds, "HumanBrokedBone", true);
-				break;
-			case SFX.Laser:
-				Play(sounds, "Laser", true);
-				break;
-			case SFX.ChoirGhostRise:
-				Play(sounds, "GhostChoir", true);
-				break;
-			case SFX.TownGhost:
-				Play(sounds, "GhostTown", true);
-				break;
-			case SFX.Sob:
-				Play(sounds, "Sob", true);
-				break;
+			
 		}
 	}
 
@@ -132,24 +126,16 @@ public class AudioManager : MonoBehaviour
 	{
 		switch (musicsEnum)
 		{
-			case MUSIC.Swirl:
-				Play(musics, "Swirls");
+			case MUSIC.Music:
+				Play(musics, "Music");
 				break;
-			case MUSIC.Heartbeat:
-				Play(musics, "Heartbeat");
+			case MUSIC.IdlePresence:
+				Play(musics, "IdlePresence");
 				break;
-			case MUSIC.Crowd:
-				Play(musics, "GhostCrowd");
+			case MUSIC.CachePresence:
+				Play(musics, "CachePresence");
 				break;
-			case MUSIC.Ambiance1:
-				Play(musics, "GhostAmbiance");
-				break;
-			case MUSIC.Ambiance2:
-				Play(musics, "BreathAmbiance");
-				break;
-			case MUSIC.Pad:
-				Play(musics, "Ghostpad");
-				break;
+
 		}
 	}
 
@@ -157,28 +143,30 @@ public class AudioManager : MonoBehaviour
 	{
 		switch (musicsEnum)
 		{
-			case MUSIC.Swirl:
-				StopPlaying(musics, "Swirls");
+			case MUSIC.Music:
+				StopPlaying(musics, "Music");
 				break;
-			case MUSIC.Heartbeat:
-				StopPlaying(musics, "Heartbeat");
+			case MUSIC.IdlePresence:
+				StopPlaying(musics, "IdlePresence");
 				break;
-			case MUSIC.Crowd:
-				StopPlaying(musics, "GhostCrowd");
+			case MUSIC.CachePresence:
+				StopPlaying(musics, "CachePresence");
 				break;
-			case MUSIC.Ambiance1:
-				StopPlaying(musics, "GhostAmbiance");
-				break;
-			case MUSIC.Ambiance2:
-				StopPlaying(musics, "BreathAmbiance");
-				break;
-			case MUSIC.Pad:
-				StopPlaying(musics, "Ghostpad");
+
+		}
+	}
+
+	public void StopSfx(SFX sfxEnum)
+	{
+		switch (sfxEnum)
+		{
+			case SFX.Laser:
+				StopPlaying(sounds, "Laser");
 				break;
 		}
 	}
 
-	public void Play(Sound[] sounds, string sound, bool SFX = false, bool doNotLoop = false)
+	private void Play(Sound[] sounds, string sound, bool SFX = false, bool doNotLoop = false)
 	{
 		Sound s = Array.Find(sounds, item => item.name == sound);
 		if (s == null)
@@ -206,8 +194,7 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
-
-	public void StopPlaying(Sound[] sounds, string sound)
+	private void StopPlaying(Sound[] sounds, string sound)
 	{
 		Sound s = Array.Find(sounds, item => item.name == sound);
 		if (s == null)

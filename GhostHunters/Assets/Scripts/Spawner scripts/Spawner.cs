@@ -50,6 +50,7 @@ public class Spawner : MonoBehaviour
     { 
         if (waveCount < numberOfWavesLength)
         {
+            AudioManager.instance.PlaySFX(AudioManager.SFX.NouvelleVague);
             Debug.Log("Wave Called");
             numberOfGhostsLength = numberOfWaves[waveCount].numberOfGhosts.Count;
             Debug.Log(numberOfGhostsLength);

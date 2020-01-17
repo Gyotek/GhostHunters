@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 522f2e03b7ef43842a801be6c99e72f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3456646438420459984
+    second: SpritesheetSpawnRed_5
+  - first:
+      213: -5195024717955998000
+    second: SpritesheetSpawnRed_6
+  - first:
+      213: 6658572535602495982
+    second: SpritesheetSpawnRed_7
+  - first:
+      213: -2715113737645233229
+    second: SpritesheetSpawnRed_8
+  - first:
+      213: 3557942714902447164
+    second: SpritesheetSpawnRed_9
+  - first:
+      213: 7548031309773715574
+    second: SpritesheetSpawnRed_10
+  - first:
+      213: -2643079822177403369
+    second: SpritesheetSpawnRed_12
+  - first:
+      213: 2654033352030663127
+    second: SpritesheetSpawnRed_14
+  - first:
+      213: -6308382796335540760
+    second: SpritesheetSpawnRed_15
+  - first:
+      213: -5502040454892878319
+    second: SpritesheetSpawnRed_16
+  - first:
+      213: 6260029160856594916
+    second: SpritesheetSpawnRed_17
+  - first:
+      213: 6517206696518225669
+    second: SpritesheetSpawnRed_18
+  - first:
+      213: 7324552642526421227
+    second: SpritesheetSpawnRed_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_5
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 537
+        width: 440
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905daa7a3924ca84495ea0a0f912c7ed
+      internalID: -3456646438420459984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_6
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 530
+        width: 441
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a9791adb0af254bb3c4b4132a065de
+      internalID: -5195024717955998000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_7
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 510
+        width: 530
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd2a5b26207d7a4690e082533f011b0
+      internalID: 6658572535602495982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_8
+      rect:
+        serializedVersion: 2
+        x: 3966
+        y: 475
+        width: 495
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0838fa1bae5d2d44eaf28ca9fd152c26
+      internalID: -2715113737645233229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_9
+      rect:
+        serializedVersion: 2
+        x: 4916
+        y: 475
+        width: 599
+        height: 882
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3de4cefa5e2e9f44adb6cf23b5ff1f1
+      internalID: 3557942714902447164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_10
+      rect:
+        serializedVersion: 2
+        x: 5907
+        y: 379
+        width: 682
+        height: 1005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca13041fa5fb1d0438fc4088663e082a
+      internalID: 7548031309773715574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_12
+      rect:
+        serializedVersion: 2
+        x: 6905
+        y: 372
+        width: 750
+        height: 1048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c895b8ed0edf642a9b2f5308f2d196
+      internalID: -2643079822177403369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_14
+      rect:
+        serializedVersion: 2
+        x: 7823
+        y: 343
+        width: 829
+        height: 1078
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017e1f1e061d4a24784c663f2899777d
+      internalID: 2654033352030663127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_15
+      rect:
+        serializedVersion: 2
+        x: 8902
+        y: 311
+        width: 818
+        height: 1140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea58e6a7dcf7a7949986dfafb848b400
+      internalID: -6308382796335540760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_16
+      rect:
+        serializedVersion: 2
+        x: 9935
+        y: 510
+        width: 612
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cbf3259a6ac7b4581c4de8ec829293
+      internalID: -5502040454892878319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_17
+      rect:
+        serializedVersion: 2
+        x: 10954
+        y: 572
+        width: 606
+        height: 674
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dff71c7b0489c469cf20effb0f6525
+      internalID: 6260029160856594916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_18
+      rect:
+        serializedVersion: 2
+        x: 11970
+        y: 592
+        width: 564
+        height: 627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480f4a3b34d64b24fa3fba3f42d94868
+      internalID: 6517206696518225669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetSpawnRed_19
+      rect:
+        serializedVersion: 2
+        x: 12964
+        y: 592
+        width: 516
+        height: 620
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b1a0c5b52969149a11754a816ea498
+      internalID: 7324552642526421227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4f7c1d68717ff39428fd4fdb4ceac4d9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

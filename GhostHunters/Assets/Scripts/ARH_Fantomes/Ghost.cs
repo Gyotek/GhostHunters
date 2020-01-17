@@ -97,14 +97,19 @@ public class Ghost : MonoBehaviour
 
     public void Hide()
     {
-        if (myState == State.Hide) return;
+        if (myState == State.Hide || myState == State.Stun) return;
 
         //if(sprite.enabled == true)
         //    sprite.enabled = false;
         if (!isMoving)
             isMoving = true;
-        anim.SetTrigger("disparitionTrigger");
+        StopAllCoroutines();
         myState = State.Hide;
+        anim.SetTrigger("disparitionTrigger");
+
+        AudioManager.instance.PlaySFX(AudioManager.SFX.Disparition);
+        AudioManager.instance.StopMusic(AudioManager.MUSIC.IdlePresence);
+        AudioManager.instance.PlayMusic(AudioManager.MUSIC.CachePresence);
     }
 
     public void Reveal()
@@ -113,28 +118,40 @@ public class Ghost : MonoBehaviour
 
         if (sprite.enabled == false)
             sprite.enabled = true;
-        anim.SetTrigger("apparitionTrigger");
         myState = State.Revealed;
+        StopAllCoroutines();
         StartCoroutine(HideCoroutine());
+        anim.SetTrigger("apparitionTrigger");
+
+        AudioManager.instance.PlaySFX(AudioManager.SFX.Apparition);
+        AudioManager.instance.StopMusic(AudioManager.MUSIC.CachePresence);
+        AudioManager.instance.PlayMusic(AudioManager.MUSIC.IdlePresence);
     }
 
     void Stun()
     {
         if (myState == State.Stun) return;
 
-        StopMoving();
-        anim.SetTrigger("stunnedTrigger");
+        if (myGhostType == GhostType.Green)
+            StopMoving();
+
         myState = State.Stun;
-        StopCoroutine(HideCoroutine());
+        StopAllCoroutines();
         ghostStunnedEvent.Raise();
+        anim.SetTrigger("stunnedTrigger");
+
+        if (myGhostType == GhostType.Green)
+            AudioManager.instance.PlaySFX(AudioManager.SFX.StunSound);
     }
 
     void Unstun()
     {
-        StartMoving();
-        anim.SetTrigger("unstunnedTrigger");
+        if (myGhostType == GhostType.Green)
+            StartMoving();
         myState = State.Revealed;
         StartCoroutine(HideCoroutine());
+        anim.SetTrigger("unstunnedTrigger");
+        
     }
 
     public void Kill()
@@ -142,19 +159,24 @@ public class Ghost : MonoBehaviour
         if (myState == State.Dead) return;
 
         StopMoving();
-        anim.SetTrigger("deathTrigger");
         myState = State.Dead;
         StopAllCoroutines();
+        anim.SetTrigger("deathTrigger");
+
+
+        AudioManager.instance.PlaySFX(AudioManager.SFX.Death);
+        AudioManager.instance.StopMusic(AudioManager.MUSIC.CachePresence);
+        AudioManager.instance.StopMusic(AudioManager.MUSIC.IdlePresence);
     }
 
     void CoroutinesChecker()
     {
-        if (hideCoroutineBool && isPointed)
+        if ((hideCoroutineBool && isPointed) || myState != State.Revealed)
         {
             hideCoroutineBool = false;
             StopCoroutine(HideCoroutine());
         }
-        if (stunCoroutineBool && !isPointed)
+        if ((stunCoroutineBool && !isPointed) || myState != State.Revealed)
         {
             stunCoroutineBool = false;
             StopCoroutine(StunCoroutine());

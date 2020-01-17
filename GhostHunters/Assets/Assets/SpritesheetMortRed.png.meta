@@ -1,0 +1,436 @@
+fileFormatVersion: 2
+guid: 01eb66fcb9608ad4fb48fa52f92303b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6369988597536273921
+    second: SpritesheetMortRed_0
+  - first:
+      213: -1096624448442361009
+    second: SpritesheetMortRed_1
+  - first:
+      213: 6979592328513511127
+    second: SpritesheetMortRed_2
+  - first:
+      213: -1181634891217851712
+    second: SpritesheetMortRed_3
+  - first:
+      213: 7812301090139864325
+    second: SpritesheetMortRed_4
+  - first:
+      213: -2191844744114364092
+    second: SpritesheetMortRed_5
+  - first:
+      213: 744968219246577299
+    second: SpritesheetMortRed_6
+  - first:
+      213: -8700995663434983948
+    second: SpritesheetMortRed_7
+  - first:
+      213: -4005454689610780278
+    second: SpritesheetMortRed_8
+  - first:
+      213: -2686585556166830442
+    second: SpritesheetMortRed_9
+  - first:
+      213: 1605261376755000077
+    second: SpritesheetMortRed_10
+  - first:
+      213: 7118746588130053052
+    second: SpritesheetMortRed_11
+  - first:
+      213: 5980970243133397191
+    second: SpritesheetMortRed_12
+  - first:
+      213: -7969748413212341266
+    second: SpritesheetMortRed_13
+  - first:
+      213: 8586076902977851548
+    second: SpritesheetMortRed_14
+  - first:
+      213: 7961331991842152887
+    second: SpritesheetMortRed_15
+  - first:
+      213: -2615145769450787110
+    second: SpritesheetMortRed_16
+  - first:
+      213: 4704038236455608860
+    second: SpritesheetMortRed_17
+  - first:
+      213: 692650828280072740
+    second: SpritesheetMortRed_18
+  - first:
+      213: -9037088168832106354
+    second: SpritesheetMortRed_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpritesheetMortRed_0
+      rect:
+        serializedVersion: 2
+        x: 12213
+        y: 603
+        width: 796
+        height: 700
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642eac8c870861a429b11eaafc6c7a59
+      internalID: 6369988597536273921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_1
+      rect:
+        serializedVersion: 2
+        x: 13369
+        y: 625
+        width: 928
+        height: 662
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7192de8eb1139e340bf8bd2556d595b1
+      internalID: -1096624448442361009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_3
+      rect:
+        serializedVersion: 2
+        x: 14499
+        y: 528
+        width: 1026
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5fc8e49381d3c48b400f27ceb88e96
+      internalID: -1181634891217851712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_8
+      rect:
+        serializedVersion: 2
+        x: 11124
+        y: 309
+        width: 699
+        height: 965
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698cd155859cae74795e2933e74e2faf
+      internalID: -4005454689610780278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_11
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 592
+        width: 443
+        height: 529
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7e2bf199f57dc4492c3ec54c47bb0c
+      internalID: 7118746588130053052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_12
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 576
+        width: 451
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f94ff33784b6b4aaf5488c3c1f8828
+      internalID: 5980970243133397191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_13
+      rect:
+        serializedVersion: 2
+        x: 2871
+        y: 513
+        width: 428
+        height: 632
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e5eacfff819b84883c51d9fb542cd5
+      internalID: -7969748413212341266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_14
+      rect:
+        serializedVersion: 2
+        x: 4090
+        y: 355
+        width: 403
+        height: 790
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746d71335314eb14cb6f32a3e8a47c2d
+      internalID: 8586076902977851548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_15
+      rect:
+        serializedVersion: 2
+        x: 5284
+        y: 258
+        width: 395
+        height: 887
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cac5edc7ce74b42b6e4bab31e197fd
+      internalID: 7961331991842152887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_16
+      rect:
+        serializedVersion: 2
+        x: 6479
+        y: 161
+        width: 395
+        height: 991
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728f098f94651bf4093e1ce949119538
+      internalID: -2615145769450787110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_17
+      rect:
+        serializedVersion: 2
+        x: 7657
+        y: 229
+        width: 403
+        height: 916
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e541b54466b0b794080fab3bd4a80235
+      internalID: 4704038236455608860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_18
+      rect:
+        serializedVersion: 2
+        x: 8664
+        y: 244
+        width: 844
+        height: 1018
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dba38c87825f5648a30901ca7f7bca7
+      internalID: 692650828280072740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpritesheetMortRed_19
+      rect:
+        serializedVersion: 2
+        x: 9906
+        y: 165
+        width: 808
+        height: 1157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb038be2836f6b4c90cf7dea8c1f3d9
+      internalID: -9037088168832106354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2b9ff9781311a034b8ef043736cd92f9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
