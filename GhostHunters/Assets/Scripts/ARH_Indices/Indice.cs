@@ -19,7 +19,7 @@ public class Indice : MonoBehaviour
     [SerializeField] GameEvent indicePoupee_Disactivated;
     [SerializeField] GameEvent indiceTirroir_Activated;
     [SerializeField] GameEvent indiceTirroir_Disactivated;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,64 +29,51 @@ public class Indice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void GhostEnter()
     {
-        if (other.GetComponent<Ghost>())
-        {
-            numberOfGhosting++;
-            Debug.Log("Object : " + gameObject.name + " triggered with : " + other.gameObject.name);
+        numberOfGhosting++;
 
-            if (!isGhosted)
+        if (!isGhosted)
+        {
+            isGhosted = true;
+            meshRenderer.material = ghostedMaterial;
+            switch (indiceName)
             {
-                isGhosted = true;
-                meshRenderer.material = ghostedMaterial;
-                switch (indiceName)
-                {
-                    case (Indices.Tableau):
-                        indiceTableau_Activated.Raise();
-                        break;
-                    case (Indices.Poupee):
-                        indicePoupee_Activated.Raise();
-                        break;
-                    case (Indices.Tirroir):
-                        indiceTirroir_Activated.Raise();
-                        break;
-                    default:
-                        break;
-                }
+                case (Indices.Tableau):
+                    indiceTableau_Activated.Raise();
+                    break;
+                case (Indices.Poupee):
+                    indicePoupee_Activated.Raise();
+                    break;
+                case (Indices.Tirroir):
+                    indiceTirroir_Activated.Raise();
+                    break;
+                default:
+                    break;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void GhostExit()
     {
-        if (other.GetComponent<Ghost>())
+        isGhosted = false;
+        meshRenderer.material = defaultMaterial;
+        switch (indiceName)
         {
-            numberOfGhosting--;
-            Debug.Log("Object : " + gameObject.name + " triggered with : " + other.gameObject.name);
-
-            if (numberOfGhosting <= 0)
-            {
-                isGhosted = false;
-                meshRenderer.material = defaultMaterial;
-                switch (indiceName)
-                {
-                    case (Indices.Tableau):
-                        indiceTableau_Disactivated.Raise();
-                        break;
-                    case (Indices.Poupee):
-                        indicePoupee_Disactivated.Raise();
-                        break;
-                    case (Indices.Tirroir):
-                        indiceTirroir_Disactivated.Raise();
-                        break;
-                    default:
-                        break;
-                }
-            }
+            case (Indices.Tableau):
+                indiceTableau_Disactivated.Raise();
+                break;
+            case (Indices.Poupee):
+                indicePoupee_Disactivated.Raise();
+                break;
+            case (Indices.Tirroir):
+                indiceTirroir_Disactivated.Raise();
+                break;
+            default:
+                break;
         }
     }
 }

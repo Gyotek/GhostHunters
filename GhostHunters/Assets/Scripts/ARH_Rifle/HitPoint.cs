@@ -21,6 +21,11 @@ public class HitPoint : MonoBehaviour
     float ghostPointedTimer = 0f;
     [SerializeField] Camera myCamera;
 
+    bool isScalingUp = false;
+    bool isScalingDown = false;
+    Vector3 MaxScale;
+    Vector3 MinScale;
+
     public SpriteRenderer sprite;
 
     // Start is called before the first frame update
@@ -29,6 +34,8 @@ public class HitPoint : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = Color.green;
 
+        MaxScale = transform.localScale;
+        MinScale = transform.localScale / 2;
 
         particleGreen.SetActive(true);
         particleRed.SetActive(false);
@@ -37,6 +44,19 @@ public class HitPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isScalingDown)
+        {
+            Debug.Log("down");
+            transform.localScale = Vector3.Lerp(transform.localScale, MinScale, 0.2f);
+            if (transform.localScale.x <= MinScale.x + 0.1f) isScalingDown = false;
+        }
+        if (isScalingUp)
+        {
+            Debug.Log("up");
+            transform.localScale = Vector3.Lerp(transform.localScale, MaxScale, 0.2f);
+            if (transform.localScale.x >= MaxScale.x - 0.1f) isScalingUp = false;
+        }
+
         transform.Rotate(Vector3.forward, 20);
 
         //position du pointeur
@@ -99,16 +119,28 @@ public class HitPoint : MonoBehaviour
             }
         }
         */
-
-        sprite.transform.localScale = new Vector3(2.8f * 1 + (m_PSMoveController.TriggerValue*2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2), 2.8f * 1 + (m_PSMoveController.TriggerValue * 2));
+        if (usePsMove)
+            sprite.transform.localScale = new Vector3(2.8f * 1 - (m_PSMoveController.TriggerValue*2), 2.8f * 1 - (m_PSMoveController.TriggerValue * 2), 2.8f * 1 - (m_PSMoveController.TriggerValue * 2));
 
         if ((usePsMove && m_PSMoveController.TriggerValue > 0.2) || (!usePsMove && Input.GetButtonDown("Fire1")))
         {
+            if (!usePsMove)
+            {
+                isScalingDown = true;
+                if (isScalingUp) isScalingUp = false;
+            }
             AudioManager.instance.PlaySFX(AudioManager.SFX.Laser);
             AudioManager.instance.PlaySFX(AudioManager.SFX.LaserBurst);
         }
         else if ((usePsMove && m_PSMoveController.TriggerValue < 0.2) || (!usePsMove && Input.GetButtonUp("Fire1")))
+        {
+            if (!usePsMove)
+            {
+                isScalingUp = true;
+                if (isScalingDown) isScalingDown = false;
+            }
             AudioManager.instance.StopSfx(AudioManager.SFX.Laser);
+        }
     }
 
 

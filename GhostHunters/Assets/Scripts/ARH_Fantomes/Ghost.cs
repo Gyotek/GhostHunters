@@ -14,6 +14,8 @@ public class Ghost : MonoBehaviour
     public bool isMoving = false;
     bool isPointed = false;
 
+    private Indice actualIndice;
+
     [SerializeField] GameEvent ghostKilledEvent;
     [SerializeField] GameEvent ghostAppearEvent;
     [SerializeField] GameEvent ghostDisappearEvent;
@@ -32,6 +34,7 @@ public class Ghost : MonoBehaviour
     [SerializeField] float maxHideAgainTimer = 5f;
 
     [SerializeField] SpriteRenderer sprite;
+    [SerializeField] GameObject damageParticles;
     public Animator anim;
     //private GhostMovement ghostMovement;
 
@@ -46,14 +49,26 @@ public class Ghost : MonoBehaviour
     void Update()
     {
         CoroutinesChecker();
+        StatesChecker();
 
+
+    }
+
+    void StatesChecker()
+    {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hided"))
         {
+            if (sprite.enabled == true) sprite.enabled = false;
+            if (!isMoving) isMoving = true;
+
             if (isPointed && !revealCoroutineBool)
                 StartCoroutine(RevealCoroutine());
         }
         else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Moving"))
         {
+            if (sprite.enabled == false) sprite.enabled = true;
+            if (!isMoving) isMoving = true;
+
             if (!hideCoroutineBool)
                 StartCoroutine(HideCoroutine());
             if (isPointed && !stunCoroutineBool && (HitPoint.instance.m_PSMoveController.TriggerValue > 0.2 || Input.GetButton("Fire1")))
@@ -61,6 +76,10 @@ public class Ghost : MonoBehaviour
         }
         else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Stunned2"))
         {
+            if (sprite.enabled == false) sprite.enabled = true;
+            if (!isMoving && myGhostType == GhostType.Red) isMoving = true;
+            if (isMoving && myGhostType == GhostType.Green) isMoving = false;
+
             if (!isPointed && !unstunCoroutineBool)
                 StartCoroutine(UnstunCoroutine());
             else if (HitPoint.instance.m_PSMoveController.TriggerValue > 0.2 || Input.GetButton("Fire1"))
@@ -72,7 +91,10 @@ public class Ghost : MonoBehaviour
         }
         else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
         {
-            if(HitPoint.instance.sprite.color == Color.red)
+            if (sprite.enabled == false) sprite.enabled = true;
+            if (isMoving) isMoving = false;
+
+            if (HitPoint.instance.sprite.color == Color.red)
                 HitPoint.instance.KilledAGhost();
             StopAllCoroutines();
             Destroy(this.gameObject);
@@ -99,8 +121,8 @@ public class Ghost : MonoBehaviour
     {
         if (myState == State.Hide || myState == State.Stun) return;
 
-        //if(sprite.enabled == true)
-        //    sprite.enabled = false;
+        if (sprite.enabled == true)
+            sprite.enabled = false;
         if (!isMoving)
             isMoving = true;
         StopAllCoroutines();
@@ -139,6 +161,7 @@ public class Ghost : MonoBehaviour
         StopAllCoroutines();
         ghostStunnedEvent.Raise();
         anim.SetTrigger("stunnedTrigger");
+        damageParticles.SetActive(true);
 
         if (myGhostType == GhostType.Green)
             AudioManager.instance.PlaySFX(AudioManager.SFX.StunSound);
@@ -148,10 +171,12 @@ public class Ghost : MonoBehaviour
     {
         if (myGhostType == GhostType.Green)
             StartMoving();
+
         myState = State.Revealed;
         StartCoroutine(HideCoroutine());
         anim.SetTrigger("unstunnedTrigger");
-        
+        damageParticles.SetActive(false);
+
     }
 
     public void Kill()
@@ -161,6 +186,7 @@ public class Ghost : MonoBehaviour
         StopMoving();
         myState = State.Dead;
         StopAllCoroutines();
+        actualIndice.GhostExit();
         anim.SetTrigger("deathTrigger");
 
 
@@ -219,5 +245,23 @@ public class Ghost : MonoBehaviour
         yield return new WaitForSeconds(unstunTimer);
         Unstun();
         unstunCoroutineBool = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Indice>())
+        {
+            actualIndice = other.GetComponent<Indice>();
+            actualIndice.GhostEnter();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<Indice>())
+        {
+            other.GetComponent<Indice>().GhostExit();
+        }
+
     }
 }

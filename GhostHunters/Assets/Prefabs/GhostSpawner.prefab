@@ -45,18 +45,155 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfWaves:
   - numberOfGhosts:
-    - typeOfGhost: {fileID: 4049290858192833956, guid: 97e8bdd6952f70c4f96ded6ad6e7a5a3,
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
         type: 3}
-      ghostSpawn: {fileID: 0}
-      timeUntilSpawn: 4
-    - typeOfGhost: {fileID: 4049290858192833956, guid: 97e8bdd6952f70c4f96ded6ad6e7a5a3,
-        type: 3}
-      ghostSpawn: {fileID: 0}
       timeUntilSpawn: 10
-    - typeOfGhost: {fileID: 4049290858192833956, guid: 97e8bdd6952f70c4f96ded6ad6e7a5a3,
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
         type: 3}
-      ghostSpawn: {fileID: 0}
+      timeUntilSpawn: 20
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 25
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 29
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 30
+  - numberOfGhosts:
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 5
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 10
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
       timeUntilSpawn: 15
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 17
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 25
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 27
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 40
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 42
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 46
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 47
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 52
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 53
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 54
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 58
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 59
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 60
+  - numberOfGhosts:
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 15
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 16
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 22
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 23
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 30
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 31
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 32
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 36
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 40
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 41
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 42
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 55
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 56
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 60
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 63
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 64
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 67
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 70
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 71
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 73
+    - typeOfGhost: {fileID: 8100530923589480962, guid: 4de4994123c1fa44cbf22101f31ba0cb,
+        type: 3}
+      timeUntilSpawn: 76
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 84
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 85
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 86
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 87
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 88
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 89
+    - typeOfGhost: {fileID: 8474539866239923191, guid: f797d7a75d1549d4da7cf3d0eac084b2,
+        type: 3}
+      timeUntilSpawn: 920
   waveCount: 0
   ghostCount: 0
   timeSinceWaveStarted: 0

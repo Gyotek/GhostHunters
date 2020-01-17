@@ -17,14 +17,22 @@ public class Spawner : MonoBehaviour
 
     public bool callWaves = false;
 
+    [SerializeField] Transform GhostParent;
+
     private void Start()
     {
+        callWaves = true;
         numberOfWavesLength = numberOfWaves.Count;
         Debug.Log(numberOfWavesLength);
     }
 
     private void Update()
     {
+        if(!GhostParent.GetComponentInChildren<Ghost>() && waveCount > 0 && callWaves == false)
+        {
+            callWaves = true;
+        }
+
         UpdateTime();
 
         if (callWaves == true)
@@ -50,7 +58,6 @@ public class Spawner : MonoBehaviour
     { 
         if (waveCount < numberOfWavesLength)
         {
-            AudioManager.instance.PlaySFX(AudioManager.SFX.NouvelleVague);
             Debug.Log("Wave Called");
             numberOfGhostsLength = numberOfWaves[waveCount].numberOfGhosts.Count;
             Debug.Log(numberOfGhostsLength);
@@ -73,8 +80,7 @@ public class Spawner : MonoBehaviour
             {
                 Debug.Log("GhostSpawn");
                 //Spawn the ghost
-                Instantiate(numberOfWaves[waveCount].numberOfGhosts[ghostCount].typeOfGhost, numberOfWaves[waveCount].numberOfGhosts[ghostCount].ghostSpawn.position, 
-                    numberOfWaves[waveCount].numberOfGhosts[ghostCount].ghostSpawn.rotation);
+                Instantiate(numberOfWaves[waveCount].numberOfGhosts[ghostCount].typeOfGhost, WayPointsManager.instance.GetWayPoint(Random.Range(0,40)),Quaternion.Euler(0, 90, 90) , GhostParent);
 
                 ghostCount += 1;
             }
@@ -101,7 +107,6 @@ public class WaveArrival
 public class GhostSpawn
 {
     public GameObject typeOfGhost;
-    public Transform ghostSpawn;
     public float timeUntilSpawn;
 }
 
